@@ -15,4 +15,8 @@ python app.py
 ```
 
 ## Showcase
-
+<div align="center">
+<img src="https://github.com/user-attachments/assets/93703461-4e1d-4370-9dcc-7155e6af7599" width="600" height="400"/>   
+<img src="https://github.com/user-attachments/assets/6523461a-4e2a-4d82-b80d-1d5837b823f7" width="600" height="400"/>   
+<img src="https://github.com/user-attachments/assets/a964b519-5282-4597-86c5-231f27352bc2" width="600" height="400"/>   
+</div>
