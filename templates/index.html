@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Storage Sigma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-upload-alt"></i> Storage Sigma</h1>
+        </header>
+        
+        <div class="upload-section">
+            <h2><i class="fas fa-file-upload"></i> Upload File</h2>
+            <form id="upload-form">
+                <div class="file-input-wrapper">
+                    <label for="file-input" class="custom-upload-btn">
+                        <i class="fas fa-cloud-upload-alt"></i> Choose File
+                    </label>
+                    <input type="file" name="file" required id="file-input" style="opacity: 0; position: absolute; z-index: -1;">
+                    <div class="file-preview" id="file-preview"></div>
+                </div>
+                <button type="submit" class="upload-btn">
+                    <i class="fas fa-upload"></i> Upload
+                </button>
+            </form>
+            <div id="upload-status"></div>
+        </div>
+
+        <div class="files-section">
+            <h2><i class="fas fa-folder-open"></i> Files</h2>
+            <ul class="file-list" id="file-list">
+                {% for file in files %}
+                <li class="file-item">
+                    <div class="file-info">
+                        {% if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')) %}
+                            <i class="fas fa-image"></i>
+                        {% else %}
+                            <i class="fas fa-file"></i>
+                        {% endif %}
+                        <a href="/download/{{ file }}">{{ file }}</a>
+                    </div>
+                    {% if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')) %}
+                    <div class="image-preview">
+                        <img src="/download/{{ file }}" alt="{{ file }}" loading="lazy">
+                    </div>
+                    {% endif %}
+                    <button class="delete-btn" onclick="deleteFile('{{ file }}', this)">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+

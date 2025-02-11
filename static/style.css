@@ -1,0 +1,246 @@
+/* Catppuccin Macchiato Colors */
+:root {
+    --base: #24273a;
+    --mantle: #1e2030;
+    --crust: #181926;
+    --text: #cad3f5;
+    --subtext1: #b8c0e0;
+    --subtext0: #a5adcb;
+    --overlay2: #939ab7;
+    --overlay1: #8087a2;
+    --overlay0: #6e738d;
+    --surface2: #5b6078;
+    --surface1: #494d64;
+    --surface0: #363a4f;
+    --pink: #f5bde6;
+    --mauve: #c6a0f6;
+    --red: #ed8796;
+    --maroon: #ee99a0;
+    --blue: #8aadf4;
+    --sky: #91d7e3;
+    --lavender: #b7bdf8;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--crust);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: var(--mantle);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+h1 {
+    color: var(--mauve);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h2 {
+    color: var(--pink);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.upload-section, .files-section {
+    background-color: var(--mantle);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-wrapper {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+   
+    color: var(--text);
+    padding: 0.75rem;
+    border: 2px solid var(--surface1);
+    width: calc(100% - 2rem);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: var(--lavender);
+}
+
+.upload-btn {
+    background-color: var(--mauve);
+    color: var(--base);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.delete-btn {
+    background-color: var(--mauve);
+    color: var(--base);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.delete-btn:hover {
+  background-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.upload-btn:hover {
+    background-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+#upload-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+    text-align: center;
+}
+
+.success {
+    background-color: var(--surface0);
+    color: var(--sky);
+    border: 1px solid var(--sky);
+}
+
+.error {
+    background-color: var(--surface0);
+    color: var(--red);
+    border: 1px solid var(--red);
+    text-align: center;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-item {
+    
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.file-item:hover {
+    transform: translateY(-2px);
+    background-color: var(--surface1);
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-info i {
+    color: var(--mauve);
+}
+
+.file-info a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.file-info a:hover {
+    color: var(--pink);
+}
+
+.image-preview {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    background-color: var(--crust);
+    border-radius: 0.5rem;
+}
+
+
+.file-preview img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .upload-section, .files-section {
+        padding: 1rem;
+    }
+    
+    .image-preview img,
+    .file-preview img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+
+.custom-upload-btn {
+    background-color: var(--mauve);
+    color: var(--base);
+    border: none;
+    padding: 0.75rem 25.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: block;
+
+}
+.custom-upload-btn:hover {
+    background-color: var(--pink);
+    transform: translateY(-2px); 
+}
+
+#file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
